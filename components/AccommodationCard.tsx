@@ -92,7 +92,7 @@ const AccommodationCard: React.FC<{ item: Accommodation; onClick: () => void; va
             >
                 <div className="relative aspect-[10/16] overflow-hidden bg-gray-200 dark:bg-gray-700">
                      {item.images && item.images.length > 0 ? (
-                        <img src={item.images[0]} alt={item.title[lang]} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" />
+                        <img src={item.images[0]} alt={item.title?.[lang] || 'TravelGVG image'} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" />
                     ) : (
                         <div className="absolute inset-0 w-full h-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
                             <BedIcon className="w-10 h-10 text-gray-400 dark:text-gray-600" />
@@ -156,7 +156,8 @@ const AccommodationCard: React.FC<{ item: Accommodation; onClick: () => void; va
         >
             <img
                 src={item.images[0]}
-                alt={item.title[lang]}
+                alt={item.title?.[lang] || 'TravelGVG image'}
+                loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>

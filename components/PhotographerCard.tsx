@@ -52,7 +52,8 @@ const PhotographerCard: React.FC<PhotographerCardProps> = ({ photographer, onCli
             <div className="aspect-[3/4]">
                 <img 
                     src={photographer.portraitImage} 
-                    alt={photographer.name[lang]}
+                    alt={photographer.name?.[lang] || 'TravelGVG image'}
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
             </div>
