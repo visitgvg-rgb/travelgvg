@@ -20,8 +20,9 @@ const SEO: React.FC<SEOProps> = ({ title, description, image, type = 'website' }
   const defaultDescription = "Your complete guide through the heart of the south. Discover accommodations, restaurants, attractions, and more in Gevgelija.";
   
   // The current URL now correctly includes the language prefix from the browser because of the router structure.
-  const currentUrl = window.location.origin + location.pathname;
-  const defaultImage = `${window.location.origin}/images/hero-slider-gevgelija-01.webp`;
+  const origin = import.meta.env.VITE_SITE_URL || 'https://www.travelgvg.com';
+  const currentUrl = origin + location.pathname;
+  const defaultImage = `${origin}/images/hero-slider-gevgelija-01.webp`;
 
   // Logic to prevent double suffixing if the title already contains the site name (e.g. from translation files)
   let metaTitle;
@@ -36,7 +37,7 @@ const SEO: React.FC<SEOProps> = ({ title, description, image, type = 'website' }
   }
 
   const metaDescription = description || defaultDescription;
-  const metaImage = image ? (image.startsWith('http') ? image : `${window.location.origin}${image}`) : defaultImage;
+  const metaImage = image ? (image.startsWith('http') ? image : `${origin}${image}`) : defaultImage;
 
   // Hreflang generation
   const getCanonicalUrl = (targetLang: string) => {
@@ -50,7 +51,7 @@ const SEO: React.FC<SEOProps> = ({ title, description, image, type = 'website' }
      
      const corePath = pathSegments.join('/');
      // Construct with new lang prefix
-     return `${window.location.origin}/${targetLang}/${corePath}`;
+     return `${origin}/${targetLang}/${corePath}`;
   };
 
   return (
