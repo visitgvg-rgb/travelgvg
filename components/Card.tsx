@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useTranslation } from '../i18n';
 import type { Listing, Prikazna, Ponuda, MultiLangString, Restaurant, Accommodation, Restaurant as ShoppingItem } from '../types';
 import { useFavorites } from '../context/FavoritesContext';
@@ -18,7 +19,6 @@ import MusicNoteIcon from './icons/MusicNoteIcon';
 
 interface CardProps {
     item: Listing;
-    onClick: () => void;
     imageClassName?: string;
     contentClassName?: string;
     shadowClassName?: string;
@@ -55,7 +55,6 @@ const isPonuda = (listing: Listing): listing is Ponuda => 'businessName' in list
 
 const Card: React.FC<CardProps> = ({ 
     item, 
-    onClick,
     imageClassName,
     contentClassName,
     shadowClassName = "shadow-md",
@@ -93,6 +92,15 @@ const Card: React.FC<CardProps> = ({
     const attractionCategories = ['muzei', 'prirodni-ubavini', 'istoriski-lokaliteti'];
     const isAttraction = 'category' in item && attractionCategories.includes(item.category);
 
+    const getLinkUrl = () => {
+        if (isRestaurant(item)) return `/${lang}/restaurants/${item.id}`;
+        if (isShopping) return `/${lang}/shopping/${item.id}`;
+        if (isEntertainment(item)) return `/${lang}/entertainment/${item.id}`;
+        if (isAttraction) return `/${lang}/attractions/${item.id}`;
+        if (isWineParadise) return `/${lang}/wine-paradise/${item.id}`;
+        return `/${lang}`;
+    };
+
 
     // Poster variant for homepage mobile sliders
     if (variant === 'poster') {
@@ -116,8 +124,8 @@ const Card: React.FC<CardProps> = ({
         }
 
         return (
-            <div
-                onClick={onClick}
+            <Link
+                to={getLinkUrl()}
                 className="w-48 h-full rounded-lg shadow-lg overflow-hidden cursor-pointer group transform hover:-translate-y-1 hover:shadow-xl transition-all duration-300 shine-effect flex flex-col"
             >
                 <div className="relative aspect-[10/16] overflow-hidden bg-gray-200 dark:bg-gray-700">
@@ -259,7 +267,7 @@ const Card: React.FC<CardProps> = ({
                         )}
                     </div>
                 </div>
-            </div>
+            </Link>
         );
     }
 
@@ -272,8 +280,8 @@ const Card: React.FC<CardProps> = ({
         const ctaText = t('card.seeOffer');
 
         return (
-            <div 
-                onClick={onClick}
+            <Link
+                to={`/${lang}/special-offers/${item.id}`}
                 className="bg-white dark:bg-slate-900 dark:border dark:border-slate-800 rounded-2xl shadow-lg dark:shadow-[0_10px_15px_-3px_rgba(0,0,0,0.2),_0_4px_6px_-4px_rgba(0,0,0,0.2)] overflow-hidden group cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 flex flex-col h-full shine-effect"
             >
                 <div className="relative aspect-[4/3] overflow-hidden">
@@ -308,7 +316,7 @@ const Card: React.FC<CardProps> = ({
                         </span>
                     </div>
                 </div>
-            </div>
+            </Link>
         );
     }
     
@@ -320,8 +328,8 @@ const Card: React.FC<CardProps> = ({
          const cardBgClass = 'bg-white';
 
         return (
-            <div 
-                onClick={onClick}
+            <Link
+                to={`/${lang}/shopping/${item.id}`}
                 className={`${cardBgClass} dark:bg-slate-900 dark:border dark:border-slate-800 dark:shadow-[0_10px_15px_-3px_rgba(0,0,0,0.2),_0_4px_6px_-4px_rgba(0,0,0,0.2)] rounded-xl overflow-hidden group cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 flex flex-col sm:flex-row h-full sm:min-h-60 shine-effect`}
             >
                 <div className="aspect-square sm:aspect-auto sm:w-2/5 sm:h-auto relative overflow-hidden">
@@ -365,7 +373,7 @@ const Card: React.FC<CardProps> = ({
                         </span>
                     </div>
                 </div>
-            </div>
+            </Link>
         );
     }
 
@@ -379,8 +387,8 @@ const Card: React.FC<CardProps> = ({
 
 
     return (
-        <div 
-            onClick={onClick}
+        <Link
+            to={getLinkUrl()}
             className={`relative h-96 rounded-lg ${shadowClassName} overflow-hidden cursor-pointer group transform hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 shine-effect ${className}`}
         >
             {item.images && item.images.length > 0 ? (
@@ -491,7 +499,7 @@ const Card: React.FC<CardProps> = ({
                     )}
                 </div>
             </div>
-        </div>
+        </Link>
     );
 };
 

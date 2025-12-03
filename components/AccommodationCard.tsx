@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useTranslation } from '../i18n';
 import type { Accommodation, MultiLangString } from '../types';
 import { useFavorites } from '../context/FavoritesContext';
@@ -68,7 +69,7 @@ const AmenityIcon: React.FC<{ amenityKey: string; className?: string }> = ({ ame
     }
 };
 
-const AccommodationCard: React.FC<{ item: Accommodation; onClick: () => void; variant?: 'default' | 'poster' }> = ({ item, onClick, variant = 'default' }) => {
+const AccommodationCard: React.FC<{ item: Accommodation; variant?: 'default' | 'poster' }> = ({ item, variant = 'default' }) => {
     const { t, language } = useTranslation();
     const { isFavorite, addFavorite, removeFavorite } = useFavorites();
     const lang = language as keyof MultiLangString;
@@ -76,6 +77,7 @@ const AccommodationCard: React.FC<{ item: Accommodation; onClick: () => void; va
     const thisItemIsFavorite = isFavorite(item.id);
 
     const handleFavoriteClick = (e: React.MouseEvent) => {
+        e.preventDefault();
         e.stopPropagation();
         if (thisItemIsFavorite) {
             removeFavorite(item.id);
@@ -86,8 +88,8 @@ const AccommodationCard: React.FC<{ item: Accommodation; onClick: () => void; va
     
     if (variant === 'poster') {
         return (
-            <div
-                onClick={onClick}
+            <Link
+                to={`/${lang}/accommodation/${item.id}`}
                 className="w-48 h-full rounded-lg shadow-lg overflow-hidden cursor-pointer group transform hover:-translate-y-1 hover:shadow-xl transition-all duration-300 shine-effect flex flex-col"
             >
                 <div className="relative aspect-[10/16] overflow-hidden bg-gray-200 dark:bg-gray-700">
@@ -144,14 +146,14 @@ const AccommodationCard: React.FC<{ item: Accommodation; onClick: () => void; va
                         </div>
                     </div>
                 </div>
-            </div>
+            </Link>
         );
     }
 
 
     return (
-        <div
-            onClick={onClick}
+        <Link
+            to={`/${lang}/accommodation/${item.id}`}
             className="relative h-96 rounded-lg shadow-lg overflow-hidden group cursor-pointer transform hover:-translate-y-2 transition-all duration-300 shine-effect"
         >
             <img
@@ -209,7 +211,7 @@ const AccommodationCard: React.FC<{ item: Accommodation; onClick: () => void; va
                     </div>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 };
 

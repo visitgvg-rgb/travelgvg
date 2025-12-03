@@ -2,7 +2,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Card from '../components/Card';
-import Modal from '../components/Modal';
 import TagIcon from '../components/icons/TagIcon';
 import Breadcrumbs from '../components/Breadcrumbs';
 import type { Restaurant as ShoppingItem, Listing, Banner as BannerType, MultiLangString } from '../types'; // Reusing Restaurant type for shopping items
@@ -20,7 +19,6 @@ const ShoppingPage: React.FC = () => {
     const [shoppingListings, setShoppingListings] = useState<ShoppingItem[]>([]);
     const [shuffledShoppingListings, setShuffledShoppingListings] = useState<ShoppingItem[]>([]);
     const [activeFilter, setActiveFilter] = useState(t('filters.all'));
-    const [selectedItem, setSelectedItem] = useState<Listing | null>(null);
     const [loading, setLoading] = useState(true);
     const [banners, setBanners] = useState<BannerType[]>([]);
     const [bannerLoading, setBannerLoading] = useState(true);
@@ -94,21 +92,6 @@ const ShoppingPage: React.FC = () => {
         setActiveFilter(t('filters.all'));
     }, [t]);
 
-    useEffect(() => {
-        if (shoppingListings.length === 0) return;
-
-        const params = new URLSearchParams(location.search);
-        const itemId = params.get('open');
-
-        if (itemId) {
-            const itemToOpen = shoppingListings.find(item => item.id === itemId);
-            if (itemToOpen) {
-                setSelectedItem(itemToOpen);
-                navigate(location.pathname, { replace: true });
-            }
-        }
-    }, [shoppingListings, location.search, navigate]);
-    
     const filteredShoppingListings = useMemo(() => {
         if (activeFilter === t('filters.all')) {
             return shuffledShoppingListings;
@@ -123,14 +106,6 @@ const ShoppingPage: React.FC = () => {
         setActiveFilter(filter);
     };
     
-    const handleCardClick = (item: Listing) => {
-        setSelectedItem(item);
-    };
-
-    const handleCloseModal = () => {
-        setSelectedItem(null);
-    };
-
     const activeShoppingBanner = useMemo(() => banners.find(banner => {
         if (!banner.placement.includes('shopping-list-top') || !banner.config.isActive) {
             return false;
@@ -145,9 +120,8 @@ const ShoppingPage: React.FC = () => {
     return (
         <>
             <SEO
-                title={selectedItem ? selectedItem.title[lang] : t('seo.shopping')}
-                description={selectedItem ? selectedItem.shortDescription?.[lang] || selectedItem.description[lang] : t('homepage.shoppingGuideDesc')}
-                image={selectedItem ? (selectedItem as ShoppingItem).images?.[0] : undefined}
+                title={t('seo.shopping')}
+                description={t('homepage.shoppingGuideDesc')}
             />
             <Breadcrumbs />
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-2 md:pt-4 pb-10">
@@ -234,7 +208,7 @@ const ShoppingPage: React.FC = () => {
                          [...Array(8)].map((_, i) => <SkeletonShoppingCard key={i} />)
                     ) : (
                         filteredShoppingListings.map(item => (
-                            <Card key={item.id} item={item} onClick={() => handleCardClick(item)} />
+                            <Card key={item.id} item={item} />
                         ))
                     )}
                 </div>
@@ -244,8 +218,6 @@ const ShoppingPage: React.FC = () => {
                         <p className="text-gray-500 dark:text-gray-400">{t('shoppingPage.noResults')}</p>
                     </div>
                 )}
-
-                <Modal item={selectedItem} onClose={handleCloseModal} />
             </div>
         </>
     );

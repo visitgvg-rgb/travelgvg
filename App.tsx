@@ -32,6 +32,10 @@ const FaqPage = React.lazy(() => import('./pages/FaqPage'));
 const TermsOfUsePage = React.lazy(() => import('./pages/TermsOfUsePage'));
 const VideoMomentsPage = React.lazy(() => import('./pages/VideoMomentsPage'));
 const GasStationsPage = React.lazy(() => import('./pages/GasStationsPage'));
+const AccommodationDetailPage = React.lazy(() => import('./pages/AccommodationDetailPage'));
+const RestaurantDetailPage = React.lazy(() => import('./pages/RestaurantDetailPage'));
+const ShoppingDetailPage = React.lazy(() => import('./pages/ShoppingDetailPage'));
+const EventDetailPage = React.lazy(() => import('./pages/EventDetailPage'));
 
 const ScrollToTop: React.FC = () => {
   const { pathname, hash } = useLocation();
@@ -134,8 +138,11 @@ const App: React.FC = () => {
       <Route path="/:lang" element={<MainLayout />}>
         <Route index element={<Homepage />} /> {/* Matches /mk, /en etc */}
         <Route path="accommodation" element={<AccommodationPage />} />
+        <Route path="accommodation/:slug" element={<AccommodationDetailPage />} />
         <Route path="restaurants" element={<RestaurantsPage />} />
+        <Route path="restaurants/:slug" element={<RestaurantDetailPage />} />
         <Route path="shopping" element={<ShoppingPage />} />
+        <Route path="shopping/:slug" element={<ShoppingDetailPage />} />
         <Route path="special-offers" element={<SpecialOffersPage />} />
         <Route path="entertainment" element={<EntertainmentPage />} />
         <Route path="attractions" element={<AttractionsPage />} />
@@ -146,6 +153,7 @@ const App: React.FC = () => {
         <Route path="stories/:id" element={<StoryDetailPage />} />
         <Route path="interactive-map" element={<InteractiveMapPage />} />
         <Route path="events" element={<EventsPage />} />
+        <Route path="events/:slug" element={<EventDetailPage />} />
         <Route path="favorites" element={<FavoritesPage />} />
         <Route path="photographers" element={<PhotographersPage />} />
         <Route path="photographers/:id" element={<PhotographersPage />} />
