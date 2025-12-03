@@ -50,6 +50,95 @@ const InfoRowItem: React.FC<{ icon: React.ReactNode, label: string, value: strin
     </div>
 );
 
+const ParsedRestaurantDescription: React.FC<{ text: string }> = ({ text }) => {
+    const { t } = useTranslation();
+
+    const parts = text.split('✨');
+    const introText = parts[0].trim();
+
+    if (parts.length < 2) {
+        return <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 mb-6 whitespace-pre-line font-medium">{text}</p>;
+    }
+
+    const rest = parts.slice(1).join('✨');
+
+    // Updated marker keys based on the new requirements
+    const markers = ['◆ Кујна', '◆ Амбиент', '◆ Погодности', '◆ Цена'];
+    const scheduleDays = ['Понеделник', 'Вторник', 'Среда', 'Четврток', 'Петок', 'Сабота', 'Недела'];
+
+    let infoBlockString = rest;
+    let scheduleBlockString = '';
+
+    // Find the beginning of the schedule block
+    const scheduleStartIndex = scheduleDays.reduce((acc, day) => {
+        const index = infoBlockString.indexOf(`${day}:`);
+        return (index !== -1 && (acc === -1 || index < acc)) ? index : acc;
+    }, -1);
+
+    if (scheduleStartIndex !== -1) {
+        scheduleBlockString = infoBlockString.substring(scheduleStartIndex).trim();
+        infoBlockString = infoBlockString.substring(0, scheduleStartIndex).trim();
+    }
+
+    const infoLines = infoBlockString.split('\n').filter(line => line.trim().startsWith('◆'));
+    const gridItems = infoLines.map(line => {
+        const content = line.replace('◆', '').trim();
+        const colonIndex = content.indexOf(':');
+        if (colonIndex === -1) return null;
+
+        const label = content.substring(0, colonIndex).trim();
+        const value = content.substring(colonIndex + 1).trim();
+
+        let icon = <SparklesIcon className="w-5 h-5" />;
+        if (label.includes('Кујна')) icon = <UtensilsCrossedIcon className="w-5 h-5" />;
+        else if (label.includes('Амбиент')) icon = <InteriorIcon className="w-5 h-5" />;
+        else if (label.includes('Погодности')) icon = <CheckIcon className="w-5 h-5" />;
+        else if (label.includes('Цена')) icon = <TagIcon className="w-5 h-5" />;
+
+        return { label, value, icon };
+    }).filter(Boolean);
+
+    const scheduleLines = scheduleBlockString.split('\n').filter(line => scheduleDays.some(day => line.startsWith(day)));
+
+    return (
+        <div className="mb-6">
+            <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 mb-6 whitespace-pre-line font-medium">
+                {introText}
+            </p>
+
+            <div className="flex flex-col gap-4 mb-6">
+                {gridItems.length > 0 && (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        {gridItems.map((item, idx) => (
+                            item && <InfoRowItem key={idx} icon={item.icon} label={item.label} value={item.value} />
+                        ))}
+                    </div>
+                )}
+
+                {scheduleLines.length > 0 && (
+                    <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg border border-gray-100 dark:border-gray-700 shadow-sm">
+                        <h4 className="text-sm uppercase font-bold text-gray-500 dark:text-gray-400 tracking-wider mb-3 flex items-center">
+                            <ClockIcon className="w-5 h-5 mr-2 text-brand-accent"/>
+                            Работно Време
+                        </h4>
+                        <ul className="space-y-1.5">
+                            {scheduleLines.map((line, idx) => {
+                                const [day, ...time] = line.split(':');
+                                return (
+                                    <li key={idx} className="flex justify-between text-sm">
+                                        <span className="font-semibold text-gray-700 dark:text-gray-300">{day}:</span>
+                                        <span className="text-gray-600 dark:text-gray-400">{time.join(':').trim()}</span>
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </div>
+                )}
+            </div>
+        </div>
+    );
+};
+
 const RestaurantDetailPage: React.FC = () => {
     const { slug } = useParams<{ slug: string }>();
     const { t, language } = useTranslation();
@@ -196,8 +285,10 @@ const RestaurantDetailPage: React.FC = () => {
                 description={item.shortDescription?.[lang] || item.description[lang]}
                 image={item.images?.[0]}
             />
-            <Breadcrumbs />
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-2 md:pt-4 pb-10">
+            <main className="min-h-screen bg-white dark:bg-gray-900">
+                <div className="max-w-7xl mx-auto">
+                    <Breadcrumbs />
+                    <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-2 md:pt-4 pb-10">
                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
                     <div className="lg:col-span-3">
                         {/* Image Gallery */}
@@ -245,7 +336,7 @@ const RestaurantDetailPage: React.FC = () => {
                          <h1 className="text-2xl md:text-3xl lg:text-4xl font-serif font-black text-brand-text dark:text-gray-100 mb-1 leading-tight">
                             {item.title[lang]}
                         </h1>
-                        <p className="text-gray-600 dark:text-gray-300 mb-6 whitespace-pre-line">{item.description[lang]}</p>
+                        <ParsedRestaurantDescription text={item.description[lang]} />
                          {renderConnectSection()}
                           <div className="flex flex-col gap-3 w-full">
                                 {item.contact.phone && (
@@ -309,6 +400,8 @@ const RestaurantDetailPage: React.FC = () => {
                         </div>
                     )}
             </div>
+                </div>
+            </main>
         </>
     );
 };

@@ -69,32 +69,24 @@ const InfoRowItem: React.FC<{ icon: React.ReactNode, label: string, value: strin
     </div>
 );
 
-const ParsedAccommodationDescription: React.FC<{ text: string, showDetails?: boolean }> = ({ text, showDetails = true }) => {
+const ParsedAccommodationDescription: React.FC<{ text: string }> = ({ text }) => {
     const { t } = useTranslation();
     const [isExpanded, setIsExpanded] = useState(false);
 
     const parts = text.split('✨');
+    const introText = parts[0].trim();
 
+    // Fallback for descriptions without the magic marker
     if (parts.length < 2) {
         return <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 mb-6 whitespace-pre-line font-medium">{text}</p>;
     }
 
-    const introText = parts[0].trim();
     const rest = parts[1];
-
     const infoBlockEndIndex = rest.indexOf('\n\n');
-    let infoBlockString = "";
-    let detailedDesc = "";
-
-    if (infoBlockEndIndex !== -1) {
-        infoBlockString = rest.substring(0, infoBlockEndIndex);
-        detailedDesc = rest.substring(infoBlockEndIndex).trim();
-    } else {
-        infoBlockString = rest;
-    }
+    const infoBlockString = infoBlockEndIndex !== -1 ? rest.substring(0, infoBlockEndIndex) : rest;
+    const detailedDesc = infoBlockEndIndex !== -1 ? rest.substring(infoBlockEndIndex).trim() : "";
 
     const infoLines = infoBlockString.split('\n').filter(line => line.trim().startsWith('◆'));
-
     const gridItems = infoLines.map(line => {
         const content = line.replace('◆', '').trim();
         const colonIndex = content.indexOf(':');
@@ -104,67 +96,61 @@ const ParsedAccommodationDescription: React.FC<{ text: string, showDetails?: boo
         const value = content.substring(colonIndex + 1).trim();
 
         let icon = <ClockIcon className="w-5 h-5" />;
-
         const labelLower = label.toLowerCase();
         if (labelLower.includes('check-in')) icon = <ClockIcon className="w-5 h-5" />;
         else if (labelLower.includes('check-out')) icon = <ClockIcon className="w-5 h-5" />;
-        else if (labelLower.includes('key') || labelLower.includes('клуч') || labelLower.includes('ključ') || labelLower.includes('κλειδι')) icon = <KeyIcon className="w-5 h-5" />;
-        else if (labelLower.includes('payment') || labelLower.includes('плаќање') || labelLower.includes('plaćanje') || labelLower.includes('πληρωμή')) icon = <CreditCardIcon className="w-5 h-5" />;
+        else if (labelLower.includes('key') || labelLower.includes('клуч')) icon = <KeyIcon className="w-5 h-5" />;
+        else if (labelLower.includes('payment') || labelLower.includes('плаќање')) icon = <CreditCardIcon className="w-5 h-5" />;
 
         return { label, value, icon };
     }).filter(Boolean);
 
     return (
         <div className="mb-6">
-            {introText && (
-                <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 mb-6 whitespace-pre-line font-medium">
-                    {introText}
-                </p>
-            )}
+            <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 mb-6 whitespace-pre-line font-medium">
+                {introText}
+            </p>
 
-            {showDetails && (
-                <div className="flex flex-col gap-4 mb-6">
-                    {gridItems.length > 0 && (
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                            {gridItems.map((item, idx) => (
-                                <InfoRowItem key={idx} icon={item!.icon} label={item!.label} value={item!.value} />
-                            ))}
-                        </div>
-                    )}
+            <div className="flex flex-col gap-4 mb-6">
+                {gridItems.length > 0 && (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        {gridItems.map((item, idx) => (
+                            item && <InfoRowItem key={idx} icon={item.icon} label={item.label} value={item.value} />
+                        ))}
+                    </div>
+                )}
 
-                    {detailedDesc && (
-                        <div className="border border-gray-100 dark:border-gray-700 rounded-xl overflow-hidden shadow-sm">
-                            <button
-                                onClick={() => setIsExpanded(!isExpanded)}
-                                className="w-full bg-gray-50 dark:bg-gray-800 p-3 flex items-center justify-between text-left transition-colors hover:bg-gray-100 dark:hover:bg-gray-700 group"
-                            >
-                                <div className="flex items-center">
-                                    <div className="text-brand-accent mr-3 bg-brand-accent/10 p-2 rounded-full flex-shrink-0">
-                                        <SparklesIcon className="w-5 h-5" />
-                                    </div>
-                                    <span className="text-[11px] uppercase font-bold text-gray-500 dark:text-gray-400 tracking-wider">
-                                        {t('modal.information')}
-                                    </span>
+                {detailedDesc && (
+                    <div className="border border-gray-100 dark:border-gray-700 rounded-xl overflow-hidden shadow-sm">
+                        <button
+                            onClick={() => setIsExpanded(!isExpanded)}
+                            className="w-full bg-gray-50 dark:bg-gray-800 p-3 flex items-center justify-between text-left transition-colors hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                        >
+                            <div className="flex items-center">
+                                <div className="text-brand-accent mr-3 bg-brand-accent/10 p-2 rounded-full flex-shrink-0">
+                                    <SparklesIcon className="w-5 h-5" />
                                 </div>
-                                <div className="flex items-center gap-2">
-                                    <span className="text-xs font-bold text-brand-accent uppercase">
-                                        {isExpanded ? t('modal.close') : t('storyDetailPage.readMore')}
-                                    </span>
-                                    <ChevronDownIcon className={`w-5 h-5 text-gray-400 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
-                                </div>
-                            </button>
-
-                            <div className={`grid transition-all duration-500 ease-in-out ${isExpanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
-                                <div className="overflow-hidden bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
-                                    <div className="p-4 text-gray-600 dark:text-gray-300 whitespace-pre-line text-sm md:text-base leading-relaxed">
-                                        {detailedDesc}
-                                    </div>
+                                <span className="text-[11px] uppercase font-bold text-gray-500 dark:text-gray-400 tracking-wider">
+                                    {t('modal.information')}
+                                </span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <span className="text-xs font-bold text-brand-accent uppercase">
+                                    {isExpanded ? t('modal.close') : t('storyDetailPage.readMore')}
+                                </span>
+                                <ChevronDownIcon className={`w-5 h-5 text-gray-400 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
+                            </div>
+                        </button>
+                        <div className={`grid transition-all duration-500 ease-in-out ${isExpanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+                            <div className="overflow-hidden bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
+                                <div className="p-4 text-gray-600 dark:text-gray-300 whitespace-pre-line text-sm md:text-base leading-relaxed">
+                                    {detailedDesc}
                                 </div>
                             </div>
                         </div>
-                    )}
-                </div>
-            )}
+                    </div>
+                )}
+            </div>
         </div>
     );
 };
@@ -175,7 +161,6 @@ const AccommodationDetailPage: React.FC = () => {
     const lang = language as keyof MultiLangString;
     const navigate = useNavigate();
     const { isFavorite, addFavorite, removeFavorite } = useFavorites();
-
 
     const [item, setItem] = useState<Accommodation | null>(null);
     const [loading, setLoading] = useState(true);
@@ -374,8 +359,10 @@ const AccommodationDetailPage: React.FC = () => {
                 description={item.shortDescription?.[lang] || item.description[lang]}
                 image={item.images?.[0]}
             />
-            <Breadcrumbs />
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-2 md:pt-4 pb-10">
+            <main className="min-h-screen bg-white dark:bg-gray-900">
+                <div className="max-w-7xl mx-auto">
+                    <Breadcrumbs />
+                    <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-2 md:pt-4 pb-10">
                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
                     <div className="lg:col-span-3">
                         {/* Image Gallery */}
@@ -507,6 +494,8 @@ const AccommodationDetailPage: React.FC = () => {
                         </div>
                     )}
             </div>
+                </div>
+            </main>
         </>
     );
 };

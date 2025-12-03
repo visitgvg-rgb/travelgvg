@@ -10,6 +10,7 @@ import { LanguageProvider, VALID_LANGUAGES, DEFAULT_LANGUAGE } from './i18n';
 import { FavoritesProvider } from './context/FavoritesContext';
 import { ThemeProvider } from './context/ThemeContext';
 import { CacheProvider } from './context/CacheContext';
+import { HelmetProvider } from 'react-helmet-async';
 
 // Lazy Load Pages to improve initial load performance
 const Homepage = React.lazy(() => import('./pages/Homepage'));
@@ -102,9 +103,10 @@ const MainLayout: React.FC = () => {
       <ThemeProvider>
         <FavoritesProvider>
           <CacheProvider>
-            <div className="flex flex-col min-h-screen [overflow-anchor:none]">
-              <ScrollToTop />
-              <Header />
+            <HelmetProvider>
+              <div className="flex flex-col min-h-screen [overflow-anchor:none]">
+                <ScrollToTop />
+                <Header />
               <main className="flex-grow w-full">
                 <ErrorBoundary>
                   <Suspense fallback={
@@ -118,7 +120,8 @@ const MainLayout: React.FC = () => {
               </main>
               <Footer />
               <ScrollToTopButton />
-            </div>
+              </div>
+            </HelmetProvider>
           </CacheProvider>
         </FavoritesProvider>
       </ThemeProvider>

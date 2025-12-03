@@ -73,6 +73,8 @@ const AccommodationCard: React.FC<{ item: Accommodation; variant?: 'default' | '
     const { t, language } = useTranslation();
     const { isFavorite, addFavorite, removeFavorite } = useFavorites();
     const lang = language as keyof MultiLangString;
+
+    if (!item) return null;
     
     const thisItemIsFavorite = isFavorite(item.id);
 
@@ -90,11 +92,11 @@ const AccommodationCard: React.FC<{ item: Accommodation; variant?: 'default' | '
         return (
             <Link
                 to={`/${lang}/accommodation/${item.id}`}
-                className="w-48 h-full rounded-lg shadow-lg overflow-hidden cursor-pointer group transform hover:-translate-y-1 hover:shadow-xl transition-all duration-300 shine-effect flex flex-col"
+                className="w-full flex-shrink-0 h-full rounded-lg shadow-lg overflow-hidden cursor-pointer group transform hover:-translate-y-1 hover:shadow-xl transition-all duration-300 shine-effect flex flex-col"
             >
                 <div className="relative aspect-[10/16] overflow-hidden bg-gray-200 dark:bg-gray-700">
                      {item.images && item.images.length > 0 ? (
-                        <img src={item.images[0]} alt={item.title?.[lang] || 'TravelGVG image'} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" />
+                        <img src={item.images?.[0]} alt={item.title?.[lang] || 'TravelGVG image'} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" />
                     ) : (
                         <div className="absolute inset-0 w-full h-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
                             <BedIcon className="w-10 h-10 text-gray-400 dark:text-gray-600" />
@@ -154,10 +156,10 @@ const AccommodationCard: React.FC<{ item: Accommodation; variant?: 'default' | '
     return (
         <Link
             to={`/${lang}/accommodation/${item.id}`}
-            className="relative h-96 rounded-lg shadow-lg overflow-hidden group cursor-pointer transform hover:-translate-y-2 transition-all duration-300 shine-effect"
+            className="relative w-full h-96 rounded-lg shadow-lg overflow-hidden group cursor-pointer transform hover:-translate-y-2 transition-all duration-300 shine-effect"
         >
             <img
-                src={item.images[0]}
+                src={item.images?.[0]}
                 alt={item.title?.[lang] || 'TravelGVG image'}
                 loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"

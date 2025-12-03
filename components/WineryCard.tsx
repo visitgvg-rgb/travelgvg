@@ -48,6 +48,8 @@ const WineryCard: React.FC<WineryCardProps> = ({ item, onDetailsClick, useFlipEf
     const { isFavorite, addFavorite, removeFavorite } = useFavorites();
     const lang = language as keyof MultiLangString;
     const [isFlipped, setIsFlipped] = React.useState(false);
+
+    if (!item) return null;
     
     const highlightText = item.highlight?.[lang];
     const thisItemIsFavorite = isFavorite(item.id);
@@ -71,9 +73,9 @@ const WineryCard: React.FC<WineryCardProps> = ({ item, onDetailsClick, useFlipEf
     const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
     const PosterStyleCard = () => (
-         <div onClick={onDetailsClick} className="relative rounded-lg shadow-lg overflow-hidden cursor-pointer group h-96 transform hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 shine-effect">
+         <div onClick={onDetailsClick} className="relative w-full rounded-lg shadow-lg overflow-hidden cursor-pointer group h-96 transform hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 shine-effect">
             <img 
-                src={item.images[0]} 
+                src={item.images?.[0]}
                 alt={item.title?.[lang] || 'TravelGVG image'}
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" 
                 loading="lazy"
@@ -111,11 +113,11 @@ const WineryCard: React.FC<WineryCardProps> = ({ item, onDetailsClick, useFlipEf
     );
 
     const FlipCard = () => (
-        <div className={`flip-card h-96 ${isFlipped ? 'is-flipped' : ''}`} onClick={handleFlip}>
+        <div className={`flip-card w-full h-96 ${isFlipped ? 'is-flipped' : ''}`} onClick={handleFlip}>
             <div className="flip-card-inner">
                 {/* Front of the card */}
                 <div className="flip-card-front bg-gray-800 text-white">
-                    <img src={item.images[0]} alt={item.title?.[lang] || 'TravelGVG image'} loading="lazy" className="absolute inset-0 w-full h-full object-cover"/>
+                    <img src={item.images?.[0]} alt={item.title?.[lang] || 'TravelGVG image'} loading="lazy" className="absolute inset-0 w-full h-full object-cover"/>
                     
                     <button 
                         onClick={handleFavoriteClick} 
@@ -167,10 +169,10 @@ const WineryCard: React.FC<WineryCardProps> = ({ item, onDetailsClick, useFlipEf
         return (
             <div 
                 onClick={onDetailsClick}
-                className="w-48 h-full rounded-lg shadow-lg overflow-hidden cursor-pointer group transform hover:-translate-y-1 hover:shadow-xl transition-all duration-300 shine-effect"
+                className="w-full flex-shrink-0 h-full rounded-lg shadow-lg overflow-hidden cursor-pointer group transform hover:-translate-y-1 hover:shadow-xl transition-all duration-300 shine-effect"
             >
                 <div className="relative aspect-[10/16] overflow-hidden bg-gray-700">
-                    <img src={item.images[0]} alt={item.title?.[lang] || 'TravelGVG image'} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" />
+                    <img src={item.images?.[0]} alt={item.title?.[lang] || 'TravelGVG image'} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                     
                     <button 
