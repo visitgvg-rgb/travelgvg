@@ -2,7 +2,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import AccommodationCard from '../components/AccommodationCard';
-import Modal from '../components/Modal';
 import SkeletonAccommodationCard from '../components/SkeletonAccommodationCard';
 import SparklesIcon from '../components/icons/SparklesIcon';
 import FilterIcon from '../components/icons/FilterIcon';
@@ -39,7 +38,6 @@ const AccommodationPage: React.FC = () => {
     const [accommodations, setAccommodations] = useState<Accommodation[]>([]);
     const [shuffledAccommodations, setShuffledAccommodations] = useState<Accommodation[]>([]);
     const [activeFilterKey, setActiveFilterKey] = useState('all');
-    const [selectedItem, setSelectedItem] = useState<Listing | null>(null);
     const [loading, setLoading] = useState(true);
     const [sortOrder, setSortOrder] = useState('recommended');
     const [selectedAmenities, setSelectedAmenities] = useState<string[]>([]);
@@ -89,22 +87,6 @@ const AccommodationPage: React.FC = () => {
         fetchBanners();
     }, []);
 
-    // Sync URL params with modal state
-    useEffect(() => {
-        if (accommodations.length === 0) return;
-    
-        const itemId = searchParams.get('open');
-    
-        if (itemId) {
-            const itemToOpen = accommodations.find(item => item.id === itemId);
-            if (itemToOpen) {
-                setSelectedItem(itemToOpen);
-            }
-        } else {
-            setSelectedItem(null);
-        }
-    }, [accommodations, searchParams]);
-    
     const allAmenities = useMemo(() => {
         if (accommodations.length === 0) return [];
         
@@ -161,22 +143,6 @@ const AccommodationPage: React.FC = () => {
         );
     };
     
-    const handleCardClick = (item: Listing) => {
-        setSearchParams(prev => {
-            const newParams = new URLSearchParams(prev);
-            newParams.set('open', item.id);
-            return newParams;
-        });
-    };
-
-    const handleCloseModal = () => {
-        setSearchParams(prev => {
-            const newParams = new URLSearchParams(prev);
-            newParams.delete('open');
-            return newParams;
-        });
-    };
-    
     const activeFilterLabel = filters.find(f => f.key === activeFilterKey)?.label || '';
 
     const activeAccommodationBanner = useMemo(() => banners.find(banner => {
@@ -191,9 +157,8 @@ const AccommodationPage: React.FC = () => {
     return (
         <>
             <SEO 
-                title={selectedItem ? selectedItem.title[lang] : t('accommodationPage.title')}
-                description={selectedItem ? selectedItem.shortDescription?.[lang] || selectedItem.description[lang] : t('homepage.accommodationDesc')}
-                image={selectedItem ? (selectedItem as Accommodation).images?.[0] : undefined}
+                title={t('accommodationPage.title')}
+                description={t('homepage.accommodationDesc')}
             />
             <Breadcrumbs />
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-2 md:pt-4 pb-10">
@@ -379,7 +344,7 @@ const AccommodationPage: React.FC = () => {
                         [...Array(8)].map((_, i) => <SkeletonAccommodationCard key={i} />)
                     ) : (
                         displayedAccommodations.map(item => (
-                            <AccommodationCard key={item.id} item={item} onClick={() => handleCardClick(item)} />
+                            <AccommodationCard key={item.id} item={item} />
                         ))
                     )}
                 </div>
@@ -389,8 +354,6 @@ const AccommodationPage: React.FC = () => {
                         <p className="text-gray-500 dark:text-gray-400">{t('accommodationPage.noResults')}</p>
                     </div>
                 )}
-
-                <Modal item={selectedItem} onClose={handleCloseModal} />
             </div>
         </>
     );

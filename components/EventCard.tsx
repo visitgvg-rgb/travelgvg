@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useTranslation } from '../i18n';
 import type { Event, MultiLangString } from '../types';
 import ClockIcon from './icons/ClockIcon';
@@ -21,10 +22,11 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
     const month = eventDate.toLocaleDateString(language, { month: 'short' });
 
     const handleShare = async (e: React.MouseEvent) => {
+        e.preventDefault();
         e.stopPropagation();
 
         // Removed #/ from URL construction for BrowserRouter compatibility
-        const shareUrl = `${window.location.origin}/events#${event.id}`;
+        const shareUrl = `${window.location.origin}/${lang}/events/${event.id}`;
 
         const shareData = {
             title: event.title[lang],
@@ -50,7 +52,7 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
     };
 
     return (
-        <div id={event.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden group flex flex-col md:flex-row transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 shine-effect">
+        <Link to={`/${lang}/events/${event.id}`} id={event.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden group flex flex-col md:flex-row transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 shine-effect">
             <div className="md:w-1/3 h-48 md:h-auto relative overflow-hidden">
                 <img src={event.image} alt={event.title?.[lang] || 'TravelGVG image'} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
             </div>
@@ -107,7 +109,7 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 };
 

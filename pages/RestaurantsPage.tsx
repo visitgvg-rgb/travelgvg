@@ -2,7 +2,6 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import Card from '../components/Card';
-import Modal from '../components/Modal';
 import SkeletonCard from '../components/SkeletonCard';
 import Breadcrumbs from '../components/Breadcrumbs';
 import type { Restaurant, Listing, Banner as BannerType, MultiLangString } from '../types';
@@ -20,7 +19,6 @@ const RestaurantsPage: React.FC = () => {
     const [allFood, setAllFood] = useState<Restaurant[]>([]);
     const [shuffledRestaurants, setShuffledRestaurants] = useState<Restaurant[]>([]);
     const [activeFilter, setActiveFilter] = useState('all');
-    const [selectedItem, setSelectedItem] = useState<Listing | null>(null);
     const [loading, setLoading] = useState(true);
     const [sortOrder, setSortOrder] = useState('recommended');
     const [banners, setBanners] = useState<BannerType[]>([]);
@@ -77,22 +75,6 @@ const RestaurantsPage: React.FC = () => {
         fetchBanners();
     }, []);
     
-    // Sync URL params with modal state
-    useEffect(() => {
-        if (allFood.length === 0) return;
-        
-        const itemId = searchParams.get('open');
-        
-        if (itemId) {
-            const itemToOpen = allFood.find(item => item.id === itemId);
-            if (itemToOpen) {
-                setSelectedItem(itemToOpen);
-            }
-        } else {
-            setSelectedItem(null);
-        }
-    }, [allFood, searchParams]);
-    
     const displayedRestaurants = useMemo(() => {
         let filteredItems: Restaurant[];
 
@@ -115,23 +97,6 @@ const RestaurantsPage: React.FC = () => {
         }
     }, [allFood, shuffledRestaurants, activeFilter, sortOrder, filterCategoryMap]);
 
-
-    const handleCardClick = (item: Listing) => {
-        setSearchParams(prev => {
-            const newParams = new URLSearchParams(prev);
-            newParams.set('open', item.id);
-            return newParams;
-        });
-    };
-
-    const handleCloseModal = () => {
-        setSearchParams(prev => {
-            const newParams = new URLSearchParams(prev);
-            newParams.delete('open');
-            return newParams;
-        });
-    };
-
     const activeRestaurantBanner = useMemo(() => banners.find(banner => {
         if (!banner.placement.includes('restaurants-list-top') || !banner.config.isActive) {
             return false;
@@ -146,9 +111,8 @@ const RestaurantsPage: React.FC = () => {
     return (
         <>
             <SEO
-                title={selectedItem ? selectedItem.title[lang] : t('seo.restaurants')}
-                description={selectedItem ? selectedItem.shortDescription?.[lang] || selectedItem.description[lang] : t('homepage.whereToEatDesc')}
-                image={selectedItem ? (selectedItem as Restaurant).images?.[0] : undefined}
+                title={t('seo.restaurants')}
+                description={t('homepage.whereToEatDesc')}
             />
             <Breadcrumbs />
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-2 md:pt-4 pb-10">
@@ -304,7 +268,7 @@ const RestaurantsPage: React.FC = () => {
                         [...Array(8)].map((_, i) => <SkeletonCard key={i} />)
                     ) : (
                         displayedRestaurants.map(item => (
-                            <Card key={item.id} item={item} onClick={() => handleCardClick(item)} />
+                            <Card key={item.id} item={item} />
                         ))
                     )}
                 </div>
@@ -314,8 +278,6 @@ const RestaurantsPage: React.FC = () => {
                         <p className="text-gray-500 dark:text-gray-400">{t('whereToEatPage.noResults')}</p>
                     </div>
                 )}
-
-                <Modal item={selectedItem} onClose={handleCloseModal} />
             </div>
         </>
     );
