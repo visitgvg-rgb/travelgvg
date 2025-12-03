@@ -1,0 +1,116 @@
+[
+  {
+    "id": "goce-tasevski",
+    "name": {
+      "mk": "Гоце Тасевски",
+      "en": "Goce Tasevski",
+      "sr": "Goce Tasevski",
+      "el": "Goce Tasevski"
+    },
+    "portraitImage": "/images/photographers/goce-tasevski/goce-tasevski-1.webp",
+    "bio": {
+      "mk": "",
+      "en": "",
+      "sr": "",
+      "el": ""
+    },
+    "socials": {
+      "instagram": "https://www.instagram.com/tasevski_photography/",
+      "facebook": "https://www.facebook.com/Tasevski.Goce"
+    },
+    "season": {
+      "mk": "",
+      "en": "",
+      "sr": "",
+      "el": ""
+    },
+    "gallery": [
+      "/images/photographers/goce-tasevski/goce-tasevski-1.webp",
+      "/images/photographers/goce-tasevski/goce-tasevski-2.webp",
+      "/images/photographers/goce-tasevski/goce-tasevski-3.webp",
+      "/images/photographers/goce-tasevski/goce-tasevski-4.webp",
+      "/images/photographers/goce-tasevski/goce-tasevski-5.webp",
+      "/images/photographers/goce-tasevski/goce-tasevski-6.webp",
+      "/images/photographers/goce-tasevski/goce-tasevski-7.webp",
+      "/images/photographers/goce-tasevski/goce-tasevski-8.webp",
+      "/images/photographers/goce-tasevski/goce-tasevski-9.webp",
+      "/images/photographers/goce-tasevski/goce-tasevski-10.webp"
+    ]
+  },
+  {
+    "id": "dimitar-novakov",
+    "name": {
+      "mk": "Димитар Новаков",
+      "en": "Dimitar Novakov",
+      "sr": "Dimitar Novakov",
+      "el": "Dimitar Novakov"
+    },
+    "portraitImage": "/images/photographers/dimitar-novakov/dimitar-novakov-01_3.webp",
+    "bio": {
+      "mk": "Помеѓу реалност и фантазија, создава свет каде секоја фотографија станува нова приказна.",
+      "en": "Between reality and fantasy, he creates worlds where every photograph becomes a new story.",
+      "sr": "Između realnosti i fantazije, stvara svet gde svaka fotografija postaje nova priča.",
+      "el": "Ειδικεύομαι στη φωτογραφία τοπίου, αποκαλύπτοντας τις κρυμμένες ομορφιές της περιοχής της Γευγελής."
+    },
+    "socials": {
+      "instagram": "https://www.instagram.com/novakovdimitar/",
+      "facebook": "https://www.facebook.com/novakovdimitar"
+    },
+    "season": {
+      "mk": "",
+      "en": "",
+      "sr": "",
+      "el": ""
+    },
+    "gallery": [
+      "/images/photographers/dimitar-novakov/dimitar-novakov-01_7.webp",
+      "/images/photographers/dimitar-novakov/dimitar-novakov-01_2.webp",
+      "/images/photographers/dimitar-novakov/dimitar-novakov-01_3.webp",
+      "/images/photographers/dimitar-novakov/dimitar-novakov-01_4.webp",
+      "/images/photographers/dimitar-novakov/dimitar-novakov-01_5.webp",
+      "/images/photographers/dimitar-novakov/dimitar-novakov-01_6.webp",
+      "/images/photographers/dimitar-novakov/dimitar-novakov-01_9.webp",
+      "/images/photographers/dimitar-novakov/dimitar-novakov-01_8.webp",
+      "/images/photographers/dimitar-novakov/dimitar-novakov-01_1.webp",
+      "/images/photographers/dimitar-novakov/dimitar-novakov-01_10.webp"
+    ]
+  },
+  {
+    "id": "stefani-brlamova",
+    "name": {
+      "mk": "Стефани Брламова",
+      "en": "Stefani Brlamova",
+      "sr": "Stefani Brlamova",
+      "el": "Stefani Brlamova"
+    },
+    "portraitImage": "/images/photographers/stefani-brlamova/stefani-brlamova-1.webp",
+    "bio": {
+      "mk": "Тишината во сликите раскажана преку објективот на мојата душа...",
+      "en": "The silence within images, told through the lens of my soul...",
+      "sr": "Tišina u slikama ispričana kroz objektiv moje duše...",
+      "el": "Η σιωπή μέσα στις εικόνες, ειπωμένη μέσα από τον φακό της ψυχής μου..."
+    },
+    "socials": {
+      "instagram": "https://www.instagram.com/stefani.93/",
+      "facebook": "https://www.facebook.com/stefani.brlamova93"
+    },
+    "season": {
+      "mk": "Тишина во слики",
+      "en": "Silence in Images",
+      "sr": "Tišina u slikama",
+      "el": "Σιωπή σε εικόνες"
+    },
+    "gallery": [
+      "/images/photographers/stefani-brlamova/stefani-brlamova-4.webp",
+      "/images/photographers/stefani-brlamova/stefani-brlamova-2.webp",
+      "/images/photographers/stefani-brlamova/stefani-brlamova-3.webp",
+      "/images/photographers/stefani-brlamova/stefani-brlamova-1.webp",
+      "/images/photographers/stefani-brlamova/stefani-brlamova-5.webp",
+      "/images/photographers/stefani-brlamova/stefani-brlamova-6.webp",
+      "/images/photographers/stefani-brlamova/stefani-brlamova-7.webp",
+      "/images/photographers/stefani-brlamova/stefani-brlamova-8.webp",
+      "/images/photographers/stefani-brlamova/stefani-brlamova-9.webp",
+      "/images/photographers/stefani-brlamova/stefani-brlamova-10.webp"
+    ]
+  }
+]

@@ -1,0 +1,249 @@
+
+[
+  {
+    "id": "promo-winery-premium",
+    "package": "premium",
+    "category": "so-degustacija",
+    "title": {
+      "mk": "Вашата Винарија Овде",
+      "en": "Your Winery Here",
+      "sr": "Vaša Vinarija Ovde",
+      "el": "Το Οινοποιείο σας Εδώ"
+    },
+    "description": {
+      "mk": "Гевгелискиот регион е познат по виното. Поставете ја вашата винарија на мапата на TravelGVG и привлечете љубители на виното од целиот регион.\n\nКонтактирајте нè веднаш за премиум промоција.",
+      "en": "The Gevgelija region is famous for wine. Put your winery on the TravelGVG map and attract wine lovers from the entire region.\n\nContact us immediately for premium promotion.",
+      "sr": "Đevđelijski region je poznat po vinu. Postavite vašu vinariju na mapu TravelGVG-a i privucite ljubitelje vina iz celog regiona.\n\nKontaktirajte nas odmah za premium promociju.",
+      "el": "Η περιοχή της Γευγελής είναι διάσημη για το κρασί. Τοποθετήστε το οινοποιείο σας στον χάρτη του TravelGVG και προσελκύστε λάτρεις του κρασιού από όλη την περιοχή.\n\nΕπικοινωνήστε μαζί μας αμέσως για premium προώθηση."
+    },
+    "highlight": {
+      "mk": "Огласувајте Тука",
+      "en": "Advertise Here",
+      "sr": "Oglasite se",
+      "el": "Διαφημιστείτε Εδώ"
+    },
+    "images": [
+      "https://picsum.photos/seed/wine-promo-1/800/600",
+      "https://picsum.photos/seed/wine-promo-2/800/600"
+    ],
+    "infoSlides": [
+      {
+        "image": "https://picsum.photos/seed/wine-slide-1/400/600",
+        "text": {
+          "mk": "Прошетка низ лозјата",
+          "en": "Vineyard Walk",
+          "sr": "Šetnja kroz vinograde",
+          "el": "Βόλτα στους αμπελώνες"
+        }
+      },
+      {
+        "image": "https://picsum.photos/seed/wine-slide-2/400/600",
+        "text": {
+          "mk": "Дегустација на сирења",
+          "en": "Cheese Tasting",
+          "sr": "Degustacija sireva",
+          "el": "Γευσιγνωσία τυριών"
+        }
+      },
+      {
+        "image": "https://picsum.photos/seed/wine-slide-3/400/600",
+        "text": {
+          "mk": "Вински подрум",
+          "en": "Wine Cellar",
+          "sr": "Vinski podrum",
+          "el": "Κάβα κρασιών"
+        }
+      }
+    ],
+    "details": {
+      "wine_types": {
+        "mk": "Вашите најдобри вина",
+        "en": "Your best wines",
+        "sr": "Vaša najbolja vina",
+        "el": "Τα καλύτερα κρασιά σας"
+      },
+      "wine_tasting": {
+        "mk": "Да, во вашиот објект",
+        "en": "Yes, at your venue",
+        "sr": "Da, u vašem objektu",
+        "el": "Ναι, στο χώρο σας"
+      },
+      "food_offer": {
+        "mk": "Вашето мени",
+        "en": "Your menu",
+        "sr": "Vaš meni",
+        "el": "Το μενού σας"
+      },
+      "winery_tour": {
+        "mk": "Организирани тури",
+        "en": "Organized tours",
+        "sr": "Organizovane ture",
+        "el": "Οργανωμένες εκδρομές"
+      }
+    },
+    "features": [
+      "degustacija",
+      "hrana",
+      "tura"
+    ],
+    "contact": {
+      "phone": "+38971566000",
+      "website": "https://travelgvg.com",
+      "whatsapp": "+38971566000",
+      "viber": "+38971566000",
+      "facebook": "https://facebook.com",
+      "instagram": "https://instagram.com"
+    },
+    "rating": {
+      "score": 5.0,
+      "reviews": 0,
+      "ratingSource": "google"
+    },
+    "video": "",
+    "mapSrc": "",
+    "photoGalleries": [
+      {
+        "title": {
+          "mk": "Вашите лозја",
+          "en": "Your Vineyards",
+          "sr": "Vaši vinogradi",
+          "el": "Οι Αμπελώνες σας"
+        },
+        "images": [
+          "https://picsum.photos/seed/vineyard-promo/800/600"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "demo-standard-winery",
+    "package": "standard",
+    "category": "so-degustacija",
+    "title": {
+      "mk": "ПРИМЕР: Семејна Винарија",
+      "en": "EXAMPLE: Family Winery",
+      "sr": "PRIMER: Porodična Vinarija",
+      "el": "ΠΑΡΑΔΕΙΓΜΑ: Οικογενειακό Οινοποιείο"
+    },
+    "description": {
+      "mk": "Произведувате домашно вино? Нудите дегустација во автентичен амбиент? Ова е местото каде што треба да се огласите. Стандард пакетот нуди одлична видливост за вашиот бизнис.",
+      "en": "Do you produce homemade wine? Do you offer tasting in an authentic setting? This is the place to advertise. The Standard package offers great visibility for your business.",
+      "sr": "Proizvodite domaće vino? Nudite degustaciju u autentičnom ambijentu? Ovo je mesto gde treba da se oglasite. Standard paket nudi odličnu vidljivost za vaš biznis.",
+      "el": "Παράγετε σπιτικό κρασί; Προσφέρετε γευσιγνωσία σε αυθεντικό περιβάλλον; Αυτό είναι το μέρος για να διαφημιστείτε. Το πακέτο Standard προσφέρει εξαιρετική προβολή για την επιχείρησή σας."
+    },
+    "images": [
+      "https://picsum.photos/seed/winery-standard/800/600"
+    ],
+    "infoSlides": [
+      {
+        "image": "https://picsum.photos/seed/standard-wine-1/400/600",
+        "text": {
+          "mk": "Вранец Берба 2020",
+          "en": "Vranec Harvest 2020",
+          "sr": "Vranac Berba 2020",
+          "el": "Vranec Σοδειά 2020"
+        }
+      },
+      {
+        "image": "https://picsum.photos/seed/standard-wine-2/400/600",
+        "text": {
+          "mk": "Традиционално мезе",
+          "en": "Traditional Appetizers",
+          "sr": "Tradicionalno meze",
+          "el": "Παραδοσιακά ορεκτικά"
+        }
+      }
+    ],
+    "details": {
+      "wine_types": {
+        "mk": "Вранец, Смедеревка",
+        "en": "Vranec, Smederevka",
+        "sr": "Vranac, Smederevka",
+        "el": "Vranec, Smederevka"
+      },
+      "wine_tasting": {
+        "mk": "Да",
+        "en": "Yes",
+        "sr": "Da",
+        "el": "Ναι"
+      },
+      "food_offer": {
+        "mk": "Мезе",
+        "en": "Appetizers",
+        "sr": "Meze",
+        "el": "Ορεκτικά"
+      },
+      "winery_tour": {
+        "mk": "Да",
+        "en": "Yes",
+        "sr": "Da",
+        "el": "Ναι"
+      }
+    },
+    "features": [
+      "degustacija",
+      "prodazba"
+    ],
+    "contact": {
+      "phone": "+38971566000",
+      "whatsapp": "+38971566000",
+      "viber": "+38971566000",
+      "facebook": "https://facebook.com",
+      "instagram": "https://instagram.com"
+    },
+    "rating": {
+      "score": 4.8,
+      "reviews": 10,
+      "ratingSource": "google"
+    },
+    "mapSrc": ""
+  },
+  {
+    "id": "demo-wine-shop",
+    "package": "standard",
+    "category": "prodazba-na-vino",
+    "title": {
+      "mk": "ПРИМЕР: Продажба на Вино",
+      "en": "EXAMPLE: Wine Shop",
+      "sr": "PRIMER: Prodaja Vina",
+      "el": "ΠΑΡΑΔΕΙΓΜΑ: Κάβα Ποτών"
+    },
+    "description": {
+      "mk": "Имате винотека или продавате вино директно од подрум? Допрете до купувачите кои бараат квалитетно локално вино за себе или за подарок.",
+      "en": "Do you have a wine shop or sell wine directly from the cellar? Reach customers looking for quality local wine for themselves or as a gift.",
+      "sr": "Imate vinoteku ili prodajete vino direktno iz podruma? Doprite do kupaca koji traže kvalitetno lokalno vino za sebe ili za poklon.",
+      "el": "Έχετε κάβα ή πουλάτε κρασί απευθείας από το κελάρι; Προσεγγίστε πελάτες που αναζητούν ποιοτικό τοπικό κρασί για τους ίδιους ή για δώρο."
+    },
+    "images": [
+      "https://picsum.photos/seed/wine-shop-free/800/600"
+    ],
+    "details": {
+      "wine_types": {
+        "mk": "Сите видови",
+        "en": "All types",
+        "sr": "Sve vrste",
+        "el": "Όλοι οι τύποι"
+      },
+      "wine_tasting": {
+        "mk": "Не",
+        "en": "No",
+        "sr": "Ne",
+        "el": "Όχι"
+      },
+      "winery_tour": {
+        "mk": "Не",
+        "en": "No",
+        "sr": "Ne",
+        "el": "Όχι"
+      }
+    },
+    "features": [
+      "prodazba"
+    ],
+    "contact": {
+      "phone": "+38971566000",
+      "facebook": "https://facebook.com"
+    },
+    "mapSrc": ""
+  }
+]

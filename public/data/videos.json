@@ -1,0 +1,78 @@
+[
+  {
+    "id": "video-javor-agapi",
+    "title": {
+      "mk": "Вкусот на Традицијата",
+      "en": "The Taste of Tradition",
+      "sr": "Ukus Tradicije",
+      "el": "Η Γεύση της Παράδοσης"
+    },
+    "description": {
+      "mk": "Погледнете ја атмосферата и вкусните специјалитети во ресторанот Јавор Агапи, познат по најдоброто јагнешко во регионот.",
+      "en": "See the atmosphere and delicious specialties at Javor Agapi restaurant, famous for the best lamb in the region.",
+      "sr": "Pogledajte atmosferu i ukusne specijalitete u restoranu Javor Agapi, poznatom po najboljoj jagnjetini u regionu.",
+      "el": "Δείτε την ατμόσφαιра και τις νόστιμες σπεσιαλιτέ στο εστιατόριο Javor Agapi, διάσημο για το καλύτερο αρνί στην περιοχή."
+    },
+    "instagramUrl": "https://www.instagram.com/reel/DQ7BIncjB8Y/?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    "thumbnailUrl": "/images/restaurants/javor-agapi/javor-agapi-0.webp",
+    "linkedItemId": "javor-agapi",
+    "linkedItemCategory": "restaurants"
+  },
+  {
+    "id": "video-rivi-apartments",
+    "title": {
+      "mk": "Вашата Оаза на Мирот",
+      "en": "Your Oasis of Peace",
+      "sr": "Vaša Oaza Mira",
+      "el": "Η Όαση της Ηρεμίας σας"
+    },
+    "description": {
+      "mk": "Релаксирајте се покрај базенот и уживајте во прекрасниот амбиент на Rivi Apartments во Мрзенци.",
+      "en": "Relax by the pool and enjoy the beautiful ambiance of Rivi Apartments in Mrzenci.",
+      "sr": "Opustite se pored bazena i uživajte u prelepom ambijentu Rivi Apartmana u Mrzencima.",
+      "el": "Χαλαρώστε δίπλα στην πισίνα και απολαύστε την όμορφη ατμόσφαιρα των Rivi Apartments στο Mrzenci."
+    },
+    "instagramUrl": "https://www.instagram.com/reel/C85aK0tt6y8/",
+    "thumbnailUrl": "/images/apartments/rivi-apartments/rivi-apartments-1.webp",
+    "linkedItemId": "rivi-apartments",
+    "linkedItemCategory": "accommodation"
+  },
+  {
+    "id": "video-dlabok-dol",
+    "title": {
+      "mk": "Скриениот Смарагд на Кожуф",
+      "en": "The Hidden Emerald of Kozuf",
+      "sr": "Skriveni Smaragd Kožufa",
+      "el": "Το Κρυμμένο Σμαράγδι του Κόζουφ"
+    },
+    "description": {
+      "mk": "Откријте ја магичната убавина на Длабоки Дол, природно чудо со кристално чиста вода, скриено во срцето на планината.",
+      "en": "Discover the magical beauty of Dlabok Dol, a natural wonder with crystal clear water, hidden in the heart of the mountain.",
+      "sr": "Otkrijte magičnu lepotu Dlabokog Dola, prirodnog čuda sa kristalno čistom vodom, skrivenog u srcu planine.",
+      "el": "Ανακαλύψτε τη μαγική ομορφιά του Dlabok Dol, ενός φυσικού θαύματος με κρυστάλλινα νερά, κρυμμένο στην καρδιά του βουνού."
+    },
+    "instagramUrl": "https://www.instagram.com/p/C6r-iEuNY82/",
+    "thumbnailUrl": "/images/local-attractions/dlabok-dol/dlabok-dol-1.webp",
+    "linkedItemId": "dlaboki-dol",
+    "linkedItemCategory": "attractions"
+  },
+  {
+    "id": "video-sofra-restoran",
+    "title": {
+      "mk": "Традиција на Трпеза",
+      "en": "Tradition on the Table",
+      "sr": "Tradicija na Stolu",
+      "el": "Παράδοση στο Τραπέζι"
+    },
+    "description": {
+      "mk": "Вкусете ја автентичната македонска кујна во гостилница Софра, каде секое јадење е подготвено со љубов.",
+      "en": "Taste authentic Macedonian cuisine at Sofra tavern, where every dish is prepared with love.",
+      "sr": "Okusite autentičnu makedonsku kuhinju u gostionici Sofra, gde se svako jelo priprema s ljubavlju.",
+      "el": "Γευτείτε την αυθεντική μακεδονική κουζίνα στην ταβέρνα Sofra, όπου κάθε πιάτο ετοιμάζεται με αγάπη."
+    },
+    "instagramUrl": "https://www.instagram.com/p/C9H8kuitp-X/",
+    "thumbnailUrl": "/images/restaurants/sofra-gostilnica/gostilnica-sofra-1.webp",
+    "linkedItemId": "gostilnica-sofra",
+    "linkedItemCategory": "restaurants"
+  }
+]

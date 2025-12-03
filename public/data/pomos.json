@@ -1,0 +1,65 @@
+
+[
+  {
+    "id": "promo-tow-service",
+    "package": "premium",
+    "category": "slep-sluzbi",
+    "title": {
+      "mk": "Вашата Шлеп Служба",
+      "en": "Your Tow Service",
+      "sr": "Vaša Šlep Služba",
+      "el": "Η Υπηρεσία Ρυμούλκησής σας"
+    },
+    "shortDescription": {
+      "mk": "Бидете првиот број што ќе го повикаат во неволја. Огласете ја вашата 24/7 служба овде.",
+      "en": "Be the first number they call in trouble. Advertise your 24/7 service here.",
+      "sr": "Budite prvi broj koji će pozvati u nevolji. Oglasite vašu 24/7 službu ovde.",
+      "el": "Γίνετε ο πρώτος αριθμός που θα καλέσουν σε περίπτωση ανάγκης. Διαφημίστε την 24/7 υπηρεσία σας εδώ."
+    },
+    "description": {
+      "mk": "Патниците имаат потреба од сигурност. TravelGVG е првата дестинација каде бараат помош.\n\nКонтактирајте нè за да бидете на оваа листа.",
+      "en": "Travelers need security. TravelGVG is the first destination where they look for help.\n\nContact us to be on this list.",
+      "sr": "Putnicima je potrebna sigurnost. TravelGVG je prva destinacija gde traže pomoć.\n\nKontaktirajte nas da budete na ovoj listi.",
+      "el": "Οι ταξιδιώτες χρειάζονται ασφάλεια. Το TravelGVG είναι ο πρώτος προορισμός όπου αναζητούν βοήθεια.\n\nΕπικοινωνήστε μαζί μας για να είστε σε αυτή τη λίστα."
+    },
+    "images": [
+      "https://picsum.photos/seed/tow-promo/800/600"
+    ],
+    "workingHours": "24/7",
+    "contact": {
+      "phone": "+38971566000"
+    },
+    "mapSrc": ""
+  },
+  {
+    "id": "promo-mechanic",
+    "package": "premium",
+    "category": "avtomehanicari",
+    "title": {
+      "mk": "Вашиот Авто Сервис",
+      "en": "Your Auto Service",
+      "sr": "Vaš Auto Servis",
+      "el": "Το Συνεργείο σας"
+    },
+    "shortDescription": {
+      "mk": "Професионален сервис за возила? Допрете до транзитните патници и локалните жители.",
+      "en": "Professional vehicle service? Reach transit travelers and locals.",
+      "sr": "Profesionalni servis za vozila? Doprite do tranzitnih putnika i lokalnih stanovnika.",
+      "el": "Επαγγελματικό σέρβις οχημάτων; Προσεγγίστε τους διερχόμενους ταξιδιώτες και τους ντόπιους."
+    },
+    "description": {
+      "mk": "Нудите брзи поправки, дијагностика или мобилен сервис? Ова е местото каде што треба да се огласите.\n\nСтанете доверлив партнер на TravelGVG.",
+      "en": "Offer quick repairs, diagnostics, or mobile service? This is the place to advertise.\n\nBecome a trusted partner of TravelGVG.",
+      "sr": "Nudite brze popravke, dijagnostiku ili mobilni servis? Ovo je mesto gde treba da se oglasite.\n\nPostanite pouzdan partner TravelGVG-a.",
+      "el": "Προσφέρετε γρήγορες επισκευές, διαγνωστικά ή κινητό σέρβις; Αυτό είναι το μέρος για να διαφημιστείτε.\n\nΓίνετε αξιόπιστος συνεργάτης του TravelGVG."
+    },
+    "images": [
+      "https://picsum.photos/seed/mechanic-promo/800/600"
+    ],
+    "workingHours": "08:00 - 18:00",
+    "contact": {
+      "phone": "+38971566000"
+    },
+    "mapSrc": ""
+  }
+]

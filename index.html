@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Language" content="mk, en">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel GVG - Tourist Portal Gevgelija</title>
+
+    <meta name="description" content="Discover Gevgelija with Travel GVG. Your guide to the best accommodations, restaurants, and attractions with high-quality photography." />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Travel GVG - Tourist Portal" />
+    <meta property="og:description" content="Your complete guide through the heart of the south. Discover accommodations, restaurants, attractions, and more in Gevgelija." />
+    <meta property="og:image" content="https://travelgvg.com/images/hero-slider-gevgelija-01.webp" />
+    <meta property="og:url" content="https://travelgvg.com/" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Travel GVG - Tourist Portal" />
+    <meta name="twitter:description" content="Your complete guide through the heart of the south. Discover accommodations, restaurants, attractions, and more in Gevgelija." />
+    <meta name="twitter:image" content="https://travelgvg.com/images/hero-slider-gevgelija-01.webp" />
+
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#F97316" />
+    <link rel="apple-touch-icon" href="/icon-192x192.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    
+    <!-- Critical CSS to prevent layout shift (FOUC) before Tailwind loads -->
+    <style>
+      body, html { margin: 0; padding: 0; }
+      body { display: flex; flex-direction: column; min-height: 100vh; }
+      #root { display: flex; flex-direction: column; flex-grow: 1; min-height: 100vh; }
+      main { flex-grow: 1; }
+    </style>
+
+    <script>
+      // Prevents Flash of Unstyled Content (FOUC) for dark mode
+      if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+<script type="importmap">
+{
+  "imports": {
+    "react-helmet-async": "https://aistudiocdn.com/react-helmet-async@^2.0.5",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-brand-bg-light dark:bg-gray-900 text-brand-text dark:text-gray-200 overflow-x-hidden">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+          for(let registration of registrations) {
+            registration.unregister().then(function() {
+              console.log('Service Worker unregistered');
+            });
+          } 
+        });
+      }
+    </script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+
+[
+  {
+    "id": "promo-offer-food",
+    "package": "premium",
+    "category": "hrana",
+    "title": {
+      "mk": "Вашиот Ресторан Овде",
+      "en": "Your Restaurant Here",
+      "sr": "Vaš Restoran Ovde",
+      "el": "Το Εστιατόριό σας Εδώ"
+    },
+    "businessName": {
+      "mk": "Место за Вашата Понуда",
+      "en": "Space for Your Offer",
+      "sr": "Mesto za Vašu Ponudu",
+      "el": "Χώρος για την Προσφορά σας"
+    },
+    "shortDescription": {
+      "mk": "Привлечете повеќе гости со специјални попусти или менија. Ова е просторот каде илјадници туристи ќе ја видат вашата понуда.",
+      "en": "Attract more guests with special discounts or menus. This is the space where thousands of tourists will see your offer.",
+      "sr": "Privucite više gostiju posebnim popustima ili menijima. Ovo je mesto gde će hiljade turista videti vašu ponudu.",
+      "el": "Προσελκύστε περισσότερους επισκέπτες με ειδικές εκπτώσεις ή μενού. Αυτός είναι ο χώρος όπου χιλιάδες τουρίστες θα δουν την προσφορά σας."
+    },
+    "description": {
+      "mk": "Дали нудите попуст на ручек мени? Или имате специјалитет на куќата? TravelGVG е вистинското место за промоција.\n\nКонтактирајте нè на +389 71 566 000 за да го резервирате ова место.",
+      "en": "Do you offer a lunch menu discount? Or have a house specialty? TravelGVG is the right place for promotion.\n\nContact us at +389 71 566 000 to reserve this spot.",
+      "sr": "Da li nudite popust na meni za ručak? Ili imate specijalitet kuće? TravelGVG je pravo mesto za promociju.\n\nKontaktirajte nas na +389 71 566 000 da rezervišete ovo mesto.",
+      "el": "Προσφέρετε έκπτωση στο μεσημεριανό μενού; Ή έχετε σπεσιαλιτέ του καταστήματος; Το TravelGVG είναι το κατάλληλο μέρος για προώθηση.\n\nΕπικοινωνήστε μαζί μας στο +389 71 566 000 για να κλείσετε αυτή τη θέση."
+    },
+    "images": [
+      "https://picsum.photos/seed/food-promo/800/600"
+    ],
+    "details": {
+      "valid_until": {
+        "mk": "Цела Сезона",
+        "en": "All Season",
+        "sr": "Cela Sezona",
+        "el": "Όλη τη Σεζόν"
+      },
+      "conditions": {
+        "mk": "Вашите услови овде.",
+        "en": "Your conditions here.",
+        "sr": "Vaši uslovi ovde.",
+        "el": "Οι όροι σας εδώ."
+      },
+      "how_to_use": {
+        "mk": "Покажете на телефон.",
+        "en": "Show on phone.",
+        "sr": "Pokažite na telefonu.",
+        "el": "Δείξτε στο τηλέφωνο."
+      }
+    },
+    "contact": {
+      "phone": "+38971566000",
+      "whatsapp": "+38971566000",
+      "viber": "+38971566000"
+    },
+    "rating": {
+      "score": 5.0,
+      "reviews": 0,
+      "ratingSource": "google"
+    },
+    "mapSrc": ""
+  },
+  {
+    "id": "promo-offer-shopping",
+    "package": "premium",
+    "category": "soping",
+    "title": {
+      "mk": "Вашиот Бутик Овде",
+      "en": "Your Boutique Here",
+      "sr": "Vaš Butik Ovde",
+      "el": "Η Μπουτίκ σας Εδώ"
+    },
+    "businessName": {
+      "mk": "Ексклузивна Промоција",
+      "en": "Exclusive Promotion",
+      "sr": "Ekskluzivna Promocija",
+      "el": "Αποκλειστική Προσφορά"
+    },
+    "shortDescription": {
+      "mk": "Имате сезонски попуст или нова колекција? Известете ги купувачите веднаш.",
+      "en": "Have a seasonal discount or a new collection? Let shoppers know instantly.",
+      "sr": "Imate sezonski popust ili novu kolekciju? Obavestite kupce odmah.",
+      "el": "Έχετε εποχιακή έκπτωση ή νέα συλλογή; Ενημερώστε τους αγοραστές άμεσα."
+    },
+    "description": {
+      "mk": "Оваа картичка е совршена за промоција на вашата продавница. Прикажете ги вашите попусти и привлечете клиенти од целиот регион.\n\nСтанете партнер на TravelGVG денес!",
+      "en": "This card is perfect for promoting your store. Showcase your discounts and attract customers from the entire region.\n\nBecome a TravelGVG partner today!",
+      "sr": "Ova kartica je savršena za promociju vaše prodavnice. Prikažite svoje popuste i privucite kupce iz celog regiona.\n\nPostanite partner TravelGVG-a danas!",
+      "el": "Αυτή η κάρτα είναι ιδανική για την προώθηση του καταστήματός σας. Προβάλετε τις εκπτώσεις σας και προσελκύστε πελάτες από όλη την περιοχή.\n\nΓίνετε συνεργάτης του TravelGVG σήμερα!"
+    },
+    "images": [
+      "https://picsum.photos/seed/shopping-promo/800/600"
+    ],
+    "details": {
+      "valid_until": {
+        "mk": "31.12.2024",
+        "en": "31.12.2024",
+        "sr": "31.12.2024",
+        "el": "31.12.2024"
+      },
+      "conditions": {
+        "mk": "За сите посетители.",
+        "en": "For all visitors.",
+        "sr": "Za sve posetioce.",
+        "el": "Για όλους τους επισκέπτες."
+      },
+      "how_to_use": {
+        "mk": "Скенирај или покажи.",
+        "en": "Scan or show.",
+        "sr": "Skeniraj ili pokaži.",
+        "el": "Σάρωση ή εμφάνιση."
+      }
+    },
+    "contact": {
+      "phone": "+38971566000",
+      "whatsapp": "+38971566000",
+      "viber": "+38971566000"
+    },
+    "rating": {
+      "score": 5.0,
+      "reviews": 0,
+      "ratingSource": "google"
+    },
+    "mapSrc": ""
+  },
+  {
+    "id": "promo-offer-accommodation",
+    "package": "standard",
+    "category": "smestuvanje",
+    "title": {
+      "mk": "Вашиот Хотел / Апартман",
+      "en": "Your Hotel / Apartment",
+      "sr": "Vaš Hotel / Apartman",
+      "el": "Το Ξενοδοχείο / Διαμέρισμά σας"
+    },
+    "businessName": {
+      "mk": "Last Minute Понуди",
+      "en": "Last Minute Offers",
+      "sr": "Last Minute Ponude",
+      "el": "Προσφορές Τελευταίας Στιγμής"
+    },
+    "shortDescription": {
+      "mk": "Пополнете ги вашите слободни соби со Last Minute понуди. Директен контакт со гостите.",
+      "en": "Fill your vacant rooms with Last Minute offers. Direct contact with guests.",
+      "sr": "Popunite svoje slobodne sobe Last Minute ponudama. Direktan kontakt sa gostima.",
+      "el": "Γεμίστε τα άδεια δωμάτιά σας με προσφορές τελευταίας στιγμής. Άμεση επαφή με τους επισκέπτες."
+    },
+    "description": {
+      "mk": "TravelGVG им овозможува на сопствениците на сместување да објавуваат специјални пакети за викенди или празници. Бидете првиот избор за туристите.\n\nОгласете се овде!",
+      "en": "TravelGVG allows accommodation owners to publish special packages for weekends or holidays. Be the first choice for tourists.\n\nAdvertise here!",
+      "sr": "TravelGVG omogućava vlasnicima smeštaja da objavljuju specijalne pakete za vikende ili praznike. Budite prvi izbor za turiste.\n\nOglasite se ovde!",
+      "el": "Το TravelGVG επιτρέπει στους ιδιοκτήτες καταλυμάτων να δημοσιεύουν ειδικά πακέτα για Σαββατοκύριακα ή αργίες. Γίνετε η πρώτη επιλογή για τους τουρίστες.\n\nΔιαφημιστείτε εδώ!"
+    },
+    "images": [
+      "https://picsum.photos/seed/accom-promo/800/600"
+    ],
+    "details": {
+      "valid_until": {
+        "mk": "Лимитирана понуда",
+        "en": "Limited offer",
+        "sr": "Limitirana ponuda",
+        "el": "Περιορισμένη προσφορά"
+      },
+      "conditions": {
+        "mk": "Резервација преку телефон.",
+        "en": "Reservation by phone.",
+        "sr": "Rezervacija putem telefona.",
+        "el": "Κράτηση μέσω τηλεφώνου."
+      },
+      "how_to_use": {
+        "mk": "Споменете TravelGVG.",
+        "en": "Mention TravelGVG.",
+        "sr": "Pomenite TravelGVG.",
+        "el": "Αναφέρετε το TravelGVG."
+      }
+    },
+    "contact": {
+      "phone": "+38971566000",
+      "whatsapp": "+38971566000"
+    },
+    "rating": {
+      "score": 5.0,
+      "reviews": 0,
+      "ratingSource": "google"
+    },
+    "mapSrc": ""
+  },
+  {
+    "id": "promo-offer-entertainment",
+    "package": "standard",
+    "category": "zabava",
+    "title": {
+      "mk": "Вашето Казино / Клуб",
+      "en": "Your Casino / Club",
+      "sr": "Vaš Kazino / Klub",
+      "el": "Το Καζίνο / Κλαμπ σας"
+    },
+    "businessName": {
+      "mk": "Влези во Забавата",
+      "en": "Join the Fun",
+      "sr": "Pridruži se Zabavi",
+      "el": "Μπείτε στη Διασκέδαση"
+    },
+    "shortDescription": {
+      "mk": "Промовирајте настани, концерти или специјални вечери. Привлечете ја публиката кај вас.",
+      "en": "Promote events, concerts, or special nights. Attract the audience to your place.",
+      "sr": "Promovišite događaje, koncerte ili specijalne večeri. Privucite publiku kod vas.",
+      "el": "Προωθήστε εκδηλώσεις, συναυλίες ή ειδικές βραδιές. Προσελκύστε το κοινό στο χώρο σας."
+    },
+    "description": {
+      "mk": "Најавете го следниот голем настан или гостин. TravelGVG е водичот за ноќниот живот во Гевгелија.\n\nВашето место е овде.",
+      "en": "Announce the next big event or guest. TravelGVG is the guide to nightlife in Gevgelija.\n\nYour spot is here.",
+      "sr": "Najavite sledeći veliki događaj ili gosta. TravelGVG je vodič za noćni život u Đevđeliji.\n\nVaše mesto je ovde.",
+      "el": "Ανακοινώστε την επόμενη μεγάλη εκδήλωση ή καλεσμένο. Το TravelGVG είναι ο οδηγός για τη νυχτερινή ζωή στη Γευγελή.\n\nΗ θέση σας είναι εδώ."
+    },
+    "images": [
+      "https://picsum.photos/seed/party-promo/800/600"
+    ],
+    "details": {
+      "valid_until": {
+        "mk": "Викенд",
+        "en": "Weekend",
+        "sr": "Vikend",
+        "el": "Σαββατοκύριακο"
+      },
+      "conditions": {
+        "mk": "Слободен влез.",
+        "en": "Free entry.",
+        "sr": "Slobodan ulaz.",
+        "el": "Ελεύθερη είσοδος."
+      },
+      "how_to_use": {
+        "mk": "Дојдете и уживајте.",
+        "en": "Come and enjoy.",
+        "sr": "Dođite i uživajte.",
+        "el": "Ελάτε και απολαύστε."
+      }
+    },
+    "contact": {
+      "phone": "+38971566000"
+    },
+    "rating": {
+      "score": 5.0,
+      "reviews": 0,
+      "ratingSource": "google"
+    },
+    "mapSrc": ""
+  }
+]

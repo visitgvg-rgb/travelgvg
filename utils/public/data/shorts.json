@@ -1,0 +1,154 @@
+[
+  {
+    "id": "gevgelija-so-srce",
+    "title": {
+      "mk": "Гевгелија со срце",
+      "en": "Gevgelija With Heart",
+      "sr": "Đevđelija sa srcem",
+      "el": "\tΓεβγελιά με Καρδιά"
+    },
+    "videoUrl": "https://youtube.com/shorts/kqUNOwJNXE0?si=CHNTuygxXHsruOrM",
+    "ctaText": {
+      "mk": "Види приказна",
+      "en": "Read Its Story",
+      "sr": "Pročitaj priču",
+      "el": "Διάβασε την Ιστορία της"
+    },
+    "ctaLink": "/stories?open=gevgelija-manifest",
+    "category": "lokalni-prikazni",
+    "featured": true
+  },
+  {
+    "id": "konsko-lokalni-atrakcii",
+    "title": {
+      "mk": "Започни го патувањето овде",
+      "en": "Start Your Journey Here",
+      "sr": "Započni putovanje ovde",
+      "el": "Ξεκίνα το Ταξίδι Σου Εδώ"
+    },
+    "videoUrl": "https://youtube.com/shorts/kqWHqSlX0hA?si=wr3uyHljmO3vpQuK",
+    "ctaText": {
+      "mk": "Види атракции",
+      "en": "See Attractions",
+      "sr": "Vidi atrakcije",
+      "el": "Δες Αξιοθέατα"
+    },
+    "ctaLink": "/attractions",
+    "category": "",
+    "featured": true
+  },
+  {
+    "id": "nature-vinski-raj",
+    "title": {
+      "mk": "Од природа во магија",
+      "en": "From Nature to Magic",
+      "sr": "Od prirode u magiju",
+      "el": "Από τη Φύση στη Μαγεία"
+    },
+    "videoUrl": "https://youtube.com/shorts/HTfZJAhmEAQ?si=r02VqmLugc_62eHR",
+    "ctaText": {
+      "mk": "Откриј вино",
+      "en": "Discover the Wine",
+      "sr": "Otkrij vino",
+      "el": "Ανακάλυψε το Κρασί"
+    },
+    "ctaLink": "/wine-paradise",
+    "category": "",
+    "featured": true
+  },
+  {
+    "id": "night-lapse-gevgelija",
+    "title": {
+      "mk": "\tПулсот на ноќна Гевгелија",
+      "en": "The Pulse of Nocturnal Gevgelija",
+      "sr": "Puls noćne Đevđelije",
+      "el": "Ο Σφυγμός της Νυχτερινής Γεβγελιάς"
+    },
+    "videoUrl": "https://youtube.com/shorts/MHH8MTq7pqY?si=PmVwCCuBzqzyOZSd",
+    "ctaText": {
+      "mk": "Види забава",
+      "en": "Find Fun",
+      "sr": "Vidi zabavu",
+      "el": "Βρες Διασκέδαση"
+    },
+    "ctaLink": "/entertainment",
+    "category": "",
+    "featured": true
+  },
+  {
+    "id": "kozuf-photographers",
+    "title": {
+      "mk": "Величествениот Кожуф: Поглед од објективот",
+      "en": "The Majestic Kožuf: Through the Lens",
+      "sr": "Veličanstveni Kožuf: Pogled iz objektiva",
+      "el": "Ο Μεγαλειώδης Κόζουφ: Μέσα από τον Φακό"
+    },
+    "videoUrl": "https://youtube.com/shorts/BOdObjJuG0A?si=LY4NnhZtA6AXgu3G",
+    "ctaText": {
+      "mk": "Види Фотографии",
+      "en": "View the Photos",
+      "sr": "Pogledajte fotografije",
+      "el": "Δείτε τις Φωτογραφίες"
+    },
+    "ctaLink": "/photographers",
+    "category": "",
+    "featured": true
+  },
+  {
+    "id": "smrdliva-voda-atrakcion",
+    "title": {
+      "mk": "Мистеријата Смрдлива Вода ",
+      "en": "The Mystery of Smrdliva Voda",
+      "sr": "Misterija Smrdljive Vode",
+      "el": "Το Μυστήριο της Smrdliva Voda"
+    },
+    "videoUrl": "https://youtube.com/shorts/B06uZIIrkp4?si=QzWowGw8JH-FQ88S",
+    "ctaText": {
+      "mk": "Види атракции",
+      "en": "See Attractions",
+      "sr": "Vidi atrakcije",
+      "el": "Δες Αξιοθέατα"
+    },
+    "ctaLink": "/attractions",
+    "category": "",
+    "featured": true
+  },
+  {
+    "id": "gevgelija-stories",
+    "title": {
+      "mk": "Приказни од срцето на Гевгелија",
+      "en": "Stories from the Heart of Gevgelija",
+      "sr": "Priče iz srca Đevđelije",
+      "el": "Ιστορίες από την Καρδιά της Γεβγελιάς"
+    },
+    "videoUrl": "https://youtube.com/shorts/1RL-tNzj2xc?si=SJ3epgzVoSHePL-u",
+    "ctaText": {
+      "mk": "Прочитај ги",
+      "en": "Read Them",
+      "sr": "Pročitaj ih",
+      "el": "Διάβασέ τες"
+    },
+    "ctaLink": "/stories",
+    "category": "",
+    "featured": true
+  },
+  {
+    "id": "fall-colors-waterfalls ",
+    "title": {
+      "mk": "Скриените бисери на Гевгелија",
+      "en": "Hidden Gems of Gevgelija",
+      "sr": "Skriveni dragulji Đevđelije",
+      "el": "Κρυμμένοι Θησαυροί της Γεβγελιάς"
+    },
+    "videoUrl": "https://youtube.com/shorts/UpvQiWr5zuU?si=-0ACN0ubzdFTvfxN",
+    "ctaText": {
+      "mk": "Откриј повеќе",
+      "en": "Otkrij više",
+      "sr": "Discover More",
+      "el": "Ανακάλυψε Περισσότερα"
+    },
+    "ctaLink": "/attractions",
+    "category": "",
+    "featured": true
+  }
+]

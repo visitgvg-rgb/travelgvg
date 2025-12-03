@@ -1,0 +1,275 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Global Styles */
+body {
+  overflow-anchor: none;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+body.modal-open .scroll-to-top-button {
+  display: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Animations - Defined as standard CSS for reliability */
+@keyframes galleryFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-gallery-fade-in {
+  animation: galleryFadeIn 0.4s ease-in-out;
+}
+
+@keyframes zoomSlideUp {
+  from {
+      transform: scale(0.95) translateY(-10px);
+      opacity: 0;
+  }
+  to {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+  }
+}
+.animate-zoom-slide-up {
+    animation: zoomSlideUp 0.3s ease-out forwards;
+}
+
+.ripple-container {
+  position: relative;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.1);
+  transform: scale(0);
+  animation: ripple-animation 600ms linear;
+  pointer-events: none;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+@keyframes slideInFromRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+.animate-slide-in-right {
+  animation: slideInFromRight 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fade-in-fast {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes swipe-pulse {
+  0%, 100% {
+      transform: translateX(0) translateY(-50%);
+      opacity: 0.7;
+  }
+  50% {
+      transform: translateX(5px) translateY(-50%);
+      opacity: 1;
+  }
+}
+.animate-swipe-pulse {
+    animation: swipe-pulse 1.5s ease-in-out infinite;
+}
+
+/* 3D Flip Card Effect (Mobile Only) */
+@media (max-width: 767px) {
+  .flip-card {
+      background-color: transparent;
+      perspective: 1000px;
+  }
+  .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      border-radius: 0.5rem;
+  }
+  .flip-card.is-flipped .flip-card-inner {
+      transform: rotateY(180deg);
+  }
+  .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 0.5rem;
+      overflow: hidden;
+  }
+  .flip-card-back {
+      transform: rotateY(180deg);
+  }
+}
+
+/* Ticket Style */
+.ticket-body {
+  position: relative;
+}
+.ticket-body::before, .ticket-body::after {
+  content: '';
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  background-color: #F8F8F8;
+  border-radius: 9999px;
+  top: -1rem;
+}
+.dark .ticket-body::before, .dark .ticket-body::after {
+  background-color: #111827;
+}
+.ticket-body::before {
+  left: -1rem;
+  box-shadow: inset -4px 0px 4px -4px rgba(0,0,0,0.1);
+}
+.ticket-body::after {
+  right: -1rem;
+  box-shadow: inset 4px 0px 4px -4px rgba(0,0,0,0.1);
+}
+.dark .ticket-body::before {
+  box-shadow: inset -4px 0px 4px -4px rgba(0,0,0,0.3);
+}
+.dark .ticket-body::after {
+   box-shadow: inset 4px 0px 4px -4px rgba(0,0,0,0.3);
+}
+
+/* Filtering Animation */
+@keyframes fadeInSlideUp {
+  from {
+      opacity: 0;
+      transform: translateY(10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+.animate-fade-in-slide-up {
+  animation: fadeInSlideUp 0.4s ease-out forwards;
+  opacity: 0;
+}
+
+/* Gallery Swipe Animations */
+@keyframes slideInFromRightFull {
+  from { transform: translateX(50px) scale(0.98); opacity: 0; }
+  to { transform: translateX(0) scale(1); opacity: 1; }
+}
+.animate-slide-in-right-full {
+  animation: slideInFromRightFull 0.3s ease-out forwards;
+}
+@keyframes slideInFromLeftFull {
+  from { transform: translateX(-50px) scale(0.98); opacity: 0; }
+  to { transform: translateX(0) scale(1); opacity: 1; }
+}
+.animate-slide-in-left-full {
+  animation: slideInFromLeftFull 0.3s ease-out forwards;
+}
+
+/* Shimmer */
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.shimmer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0,
+    rgba(255, 255, 255, 0.2) 20%,
+    rgba(255, 255, 255, 0.5) 60%,
+    rgba(255, 255, 255, 0)
+  );
+  animation: shimmer 1.5s infinite;
+}
+.dark .shimmer::before {
+   background-image: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0) 0,
+    rgba(0, 0, 0, 0.2) 20%,
+    rgba(0, 0, 0, 0.5) 60%,
+    rgba(0, 0, 0, 0)
+  );
+}
+.break-inside-avoid {
+  break-inside: avoid;
+}
+
+/* Hero Slider Animations */
+@keyframes heroFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes heroSlideUp {
+  from { 
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+.animate-hero-fade-in {
+    animation: heroFadeIn 0.8s ease-out both;
+}
+.animate-hero-slide-up {
+    animation: heroSlideUp 0.8s ease-out 0.4s both;
+}
+
+/* Video Player */
+.video-swiper-container {
+    transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.video-slide {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+}
+
+/* Progress Bar */
+@keyframes storyProgress {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+.animate-story-progress {
+  animation: storyProgress 5s linear forwards;
+}
