@@ -122,7 +122,7 @@ const Card: React.FC<CardProps> = ({
             >
                 <div className="relative aspect-[10/16] overflow-hidden bg-gray-200 dark:bg-gray-700">
                      {item.images && item.images.length > 0 ? (
-                        <img src={item.images[0]} alt={item.title[lang]} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" />
+                        <img src={item.images[0]} alt={item.title?.[lang] || 'TravelGVG image'} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" />
                     ) : (
                         <div className="absolute inset-0 w-full h-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
                             <PlateIcon className="w-10 h-10 text-gray-400 dark:text-gray-600" />
@@ -278,9 +278,9 @@ const Card: React.FC<CardProps> = ({
             >
                 <div className="relative aspect-[4/3] overflow-hidden">
                     {item.images && item.images.length > 0 ? (
-                        <img src={item.images[0]} alt={title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                        <img src={item.images[0]} alt={title || 'TravelGVG image'} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                     ) : (
-                         <img src="https://picsum.photos/seed/placeholder/800/600" alt={t('card.placeholderAlt', { title: title })} className="absolute inset-0 w-full h-full object-cover" />
+                         <img src="https://picsum.photos/seed/placeholder/800/600" alt={t('card.placeholderAlt', { title: title }) || 'TravelGVG image'} loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
                     )}
                     <button
                         onClick={handleFavoriteClick}
@@ -326,9 +326,9 @@ const Card: React.FC<CardProps> = ({
             >
                 <div className="aspect-square sm:aspect-auto sm:w-2/5 sm:h-auto relative overflow-hidden">
                     {item.images && item.images.length > 0 ? (
-                        <img src={item.images[0]} alt={title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                        <img src={item.images[0]} alt={title || 'TravelGVG image'} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                     ) : (
-                        <img src="https://picsum.photos/seed/placeholder/800/600" alt={t('card.placeholderAlt', { title: title })} className="absolute inset-0 w-full h-full object-cover" />
+                        <img src="https://picsum.photos/seed/placeholder/800/600" alt={t('card.placeholderAlt', { title: title }) || 'TravelGVG image'} loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
                     )}
                     {highlightText && (
                         <div className="absolute top-0 left-0 w-28 h-28 overflow-hidden z-10">
@@ -384,7 +384,7 @@ const Card: React.FC<CardProps> = ({
             className={`relative h-96 rounded-lg ${shadowClassName} overflow-hidden cursor-pointer group transform hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 shine-effect ${className}`}
         >
             {item.images && item.images.length > 0 ? (
-                <img src={item.images[0]} alt={item.title[lang]} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" />
+                <img src={item.images[0]} alt={item.title?.[lang] || 'TravelGVG image'} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" />
             ) : (
                 <div className="absolute inset-0 w-full h-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
                     <PlateIcon className="w-12 h-12 text-gray-400 dark:text-gray-600" />

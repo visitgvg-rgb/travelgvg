@@ -52,7 +52,7 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
     return (
         <div id={event.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden group flex flex-col md:flex-row transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 shine-effect">
             <div className="md:w-1/3 h-48 md:h-auto relative overflow-hidden">
-                <img src={event.image} alt={event.title[lang]} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <img src={event.image} alt={event.title?.[lang] || 'TravelGVG image'} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
             </div>
             <div className="md:w-2/3 p-5 flex flex-col">
                 <div className="flex items-start gap-4">
