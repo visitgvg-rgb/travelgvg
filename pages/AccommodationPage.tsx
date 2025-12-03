@@ -191,8 +191,9 @@ const AccommodationPage: React.FC = () => {
     return (
         <>
             <SEO 
-                title={t('accommodationPage.title')} 
-                description={t('homepage.accommodationDesc')} 
+                title={selectedItem ? selectedItem.title[lang] : t('accommodationPage.title')}
+                description={selectedItem ? selectedItem.shortDescription?.[lang] || selectedItem.description[lang] : t('homepage.accommodationDesc')}
+                image={selectedItem ? (selectedItem as Accommodation).images?.[0] : undefined}
             />
             <Breadcrumbs />
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-2 md:pt-4 pb-10">

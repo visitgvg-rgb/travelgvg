@@ -144,7 +144,11 @@ const ShoppingPage: React.FC = () => {
 
     return (
         <>
-            <SEO title={t('seo.shopping')} description={t('homepage.shoppingGuideDesc')} />
+            <SEO
+                title={selectedItem ? selectedItem.title[lang] : t('seo.shopping')}
+                description={selectedItem ? selectedItem.shortDescription?.[lang] || selectedItem.description[lang] : t('homepage.shoppingGuideDesc')}
+                image={selectedItem ? (selectedItem as ShoppingItem).images?.[0] : undefined}
+            />
             <Breadcrumbs />
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-2 md:pt-4 pb-10">
                 {/* Mobile Collapsible Title & Info */}

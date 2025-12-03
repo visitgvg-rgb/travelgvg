@@ -145,7 +145,11 @@ const RestaurantsPage: React.FC = () => {
 
     return (
         <>
-            <SEO title={t('seo.restaurants')} description={t('homepage.whereToEatDesc')} />
+            <SEO
+                title={selectedItem ? selectedItem.title[lang] : t('seo.restaurants')}
+                description={selectedItem ? selectedItem.shortDescription?.[lang] || selectedItem.description[lang] : t('homepage.whereToEatDesc')}
+                image={selectedItem ? (selectedItem as Restaurant).images?.[0] : undefined}
+            />
             <Breadcrumbs />
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-2 md:pt-4 pb-10">
                 {/* Mobile Collapsible Title & Info */}
